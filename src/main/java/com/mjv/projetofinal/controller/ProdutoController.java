@@ -13,52 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mjv.projetofinal.dto.ProdutoDto;
-import com.mjv.projetofinal.model.Categoria;
-import com.mjv.projetofinal.model.Produto;
-import com.mjv.projetofinal.repository.CategoriaRepository;
-import com.mjv.projetofinal.repository.ProdutoRepository;
+import com.mjv.projetofinal.model.pedido.Produto;
+import com.mjv.projetofinal.service.ProdutoService;
 
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
 	@Autowired
-	private ProdutoRepository repository;
+	private ProdutoService service;
 	
-	@Autowired
-	private CategoriaRepository categoriaRepository;
 	
 	@PostMapping
 	public void insert(@RequestBody ProdutoDto produtodto) {
-		Categoria cat = categoriaRepository.getById(produtodto.getCategoriaId());
-		Produto prod = new Produto();
-		prod.setNome(produtodto.getNome());
-		prod.setDescricao(produtodto.getDescricao());
-		prod.setPreco(produtodto.getPreco());
-		prod.setImagemUrl(produtodto.getImagemUrl());
-		prod.setCategoria(cat);
-		repository.save(prod);
+		service.insert(produtodto);
 	}
 	
 	@GetMapping
 	public List<Produto> getAll(){
-		return repository.findAll();
+		return service.getAll();
+	}
+	
+	@GetMapping("/{id}")
+	public Produto getById(@PathVariable ("id") Integer produtoId){
+		return service.getById(produtoId);
 	}
 	
 	@PutMapping("/{id}")
 	public void update(@PathVariable ("id") Integer produtoId, @RequestBody ProdutoDto updateProduto){
-		Produto prod = repository.getById(produtoId);
-		prod.setNome(updateProduto.getNome());
-		prod.setDescricao(updateProduto.getDescricao());
-		prod.setPreco(updateProduto.getPreco());
-		prod.setImagemUrl(updateProduto.getImagemUrl());
-		prod.setCategoria(categoriaRepository.getById(updateProduto.getCategoriaId()));
-		repository.save(prod);
+		service.update(produtoId, updateProduto);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable ("id") Integer produtoId) {
-		repository.deleteById(produtoId);
+		service.delete(produtoId);
 	}
-	
 
 }

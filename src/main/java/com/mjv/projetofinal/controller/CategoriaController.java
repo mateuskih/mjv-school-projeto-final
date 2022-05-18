@@ -12,37 +12,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mjv.projetofinal.model.Categoria;
-import com.mjv.projetofinal.repository.CategoriaRepository;
+import com.mjv.projetofinal.model.cadastro.Categoria;
+import com.mjv.projetofinal.service.CategoriaService;
 
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
 	@Autowired
-	private CategoriaRepository repository;
+	private CategoriaService service;
 	
 	@PostMapping
 	public void insert(@RequestBody Categoria categoria) {
-		repository.save(categoria);
+		service.insert(categoria);
 	}
 	
 	@GetMapping
 	public List<Categoria> getAll(){
-		return repository.findAll();
+		return service.getAll();
 	}
 	
 	@PutMapping("/{id}")
 	public void update(@PathVariable ("id") Integer categoriaId, @RequestBody Categoria updateCategoria){
-		Categoria cat = repository.getById(categoriaId);
-		cat.setNome(updateCategoria.getNome());
-		cat.setDescricao(updateCategoria.getDescricao());
-		cat.setImagemUrl(updateCategoria.getImagemUrl());
-		repository.save(cat);
+		service.updateCategoria(categoriaId, updateCategoria);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable ("id") Integer categoriaId) {
-		repository.deleteById(categoriaId);
+		service.delete(categoriaId);
 	}
 
 }

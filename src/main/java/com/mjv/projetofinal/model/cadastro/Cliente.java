@@ -1,4 +1,4 @@
-package com.mjv.projetofinal.model;
+package com.mjv.projetofinal.model.cadastro;
 
 import java.util.Objects;
 
@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -31,7 +30,6 @@ public class Cliente {
 	private Long whatsapp;
 	@Enumerated(EnumType.STRING)
 	private Role role = Role.COMUM;
-	@JsonIgnore
 	private String token;
 	
 	

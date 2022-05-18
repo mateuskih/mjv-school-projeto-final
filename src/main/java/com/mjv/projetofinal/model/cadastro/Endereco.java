@@ -1,4 +1,4 @@
-package com.mjv.projetofinal.model;
+package com.mjv.projetofinal.model.cadastro;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
