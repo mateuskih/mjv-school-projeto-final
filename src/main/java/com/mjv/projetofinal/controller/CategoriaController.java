@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mjv.projetofinal.model.cadastro.Categoria;
+import com.mjv.projetofinal.model.pedido.Categoria;
 import com.mjv.projetofinal.service.CategoriaService;
 
 @RestController

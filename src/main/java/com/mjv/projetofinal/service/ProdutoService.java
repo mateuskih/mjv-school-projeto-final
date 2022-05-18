@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mjv.projetofinal.dto.ProdutoDto;
-import com.mjv.projetofinal.model.cadastro.Categoria;
+import com.mjv.projetofinal.model.pedido.Categoria;
 import com.mjv.projetofinal.model.pedido.Produto;
 import com.mjv.projetofinal.repository.CategoriaRepository;
 import com.mjv.projetofinal.repository.ProdutoRepository;

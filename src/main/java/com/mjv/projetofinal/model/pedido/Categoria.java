@@ -1,4 +1,4 @@
-package com.mjv.projetofinal.model.cadastro;
+package com.mjv.projetofinal.model.pedido;
 
 import java.util.List;
 
@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.mjv.projetofinal.model.pedido.Produto;
 
 import lombok.Data;
 

@@ -13,7 +13,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mjv.projetofinal.dto.ProdutoDto;
-import com.mjv.projetofinal.model.cadastro.Categoria;
 
 
 
