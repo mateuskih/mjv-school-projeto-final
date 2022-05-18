@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center mt-5">
         <h3 class="pt-3">Adicionar Categoria</h3>
       </div>
     </div>
@@ -22,7 +22,7 @@
             <input type="text" class="form-control" v-model="imageUrl" />
           </div>
           <button type="button" class="btn btn-primary" @click="addCategory">
-            Submit
+            Enviar
           </button>
         </form>
       </div>

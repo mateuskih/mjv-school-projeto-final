@@ -18,7 +18,7 @@
                    v-show="$route.name == 'Category'">
         <button class="btn btn-primary">Edit</button>
       </router-link>
-      <button class="btn btn-danger ml-3" @click="deleteCategory(category.id)" >Remover</button>
+      <button class="btn btn-danger ml-3" @click="deleteCategory(category.id)" v-show="$route.name == 'Category'">Remover</button>
     </div>
   </div>
 </template>

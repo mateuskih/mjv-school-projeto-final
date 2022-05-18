@@ -105,6 +105,13 @@ export default {
   methods: {
     // fetch All items in cart
     listCartItems() {
+      if (!this.token) {
+        swal({
+          text: "Logue para acessar o carrinho",
+          icon: "error",
+        });
+        return this.$router.push('/') ;
+      }
       axios
         .get(`${this.baseURL}pedido/?token=${this.token}`)
         .then((res) => {

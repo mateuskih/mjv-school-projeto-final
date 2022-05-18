@@ -18,7 +18,7 @@
       >
         <button class="btn btn-primary">Edit</button>
       </router-link>
-      <button class="btn btn-danger ml-3" @click="deleteProduto(product.id)" >Remover</button>
+      <button class="btn btn-danger ml-3" @click="deleteProduto(product.id)" v-show="$route.name == 'AdminProduct'">Remover</button>
     </div>
   </div>
 </template>
