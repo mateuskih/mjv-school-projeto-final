@@ -32,6 +32,9 @@ npm install
 npm run serve
 ```
 
+##### Diagrama de Classe
+![](https://i.imgur.com/xcGGgqt.png)
+
 ##### Endpoints
 * Clientes
 ![](https://i.imgur.com/OokKQlD.png)
