@@ -37,7 +37,7 @@ npm run serve
 
 ##### Endpoints
 * Clientes
-![](https://i.imgur.com/OokKQlD.png)
+![](https://i.imgur.com/x4x14Uy.png)
 * Produtos
 ![](https://i.imgur.com/QNH3NdL.png)
 * Categorias
